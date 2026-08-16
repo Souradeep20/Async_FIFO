@@ -1,4 +1,4 @@
-# Async_FIFO
+# RTL Design and Validation of Dual Clock Asynchronous FIFO
 A clock-domain crossing (CDC) occurs when digital information is transferred between logic operating from different clocks. A dual-clock asynchronous FIFO is a commonly used CDC structure for safely buffering data between such domains. Unlike a synchronous FIFO, the write and read sides of an asynchronous FIFO do not require a common clock or a fixed phase relationship.
 This project implements a 32-bit wide asynchronous FIFO with a depth of 8 words. The write domain operates at 100 MHz while the read domain operates at 50 MHz. Since the write side is faster than the read side, the FIFO is intentionally exercised under a producer-faster-than-consumer condition. The design uses binary pointers for memory addressing, Gray-coded pointers for clock-domain crossing, and two-flop synchronizers for the crossing pointer signals.
 
